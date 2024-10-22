@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "925505132840",
+    "project_id": "mr-abd-elrazek",
+    "storage_bucket": "mr-abd-elrazek.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:925505132840:android:db3413debdafc4a9d9981d",
+        "android_client_info": {
+          "package_name": "com.mycompany.mrabdelrazek"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOjhBhAOzogsDVa6SZHr1mdaXnJMXv9k8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
