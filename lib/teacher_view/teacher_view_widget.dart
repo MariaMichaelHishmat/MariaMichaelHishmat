@@ -2,6 +2,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'teacher_view_model.dart';
 export 'teacher_view_model.dart';
 
@@ -42,14 +44,14 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -68,7 +70,7 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                         borderRadius: BorderRadius.circular(16.0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 16.0, 16.0, 16.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -96,7 +98,7 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                                     letterSpacing: 0.0,
                                   ),
                             ),
-                          ].divide(const SizedBox(height: 16.0)),
+                          ].divide(SizedBox(height: 16.0)),
                         ),
                       ),
                     ),
@@ -121,7 +123,7 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 16.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -140,7 +142,7 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                                             BorderRadius.circular(25.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
+                                        padding: EdgeInsets.all(8.0),
                                         child: Text(
                                           'JD',
                                           textAlign: TextAlign.center,
@@ -188,7 +190,7 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                                         ),
                                       ],
                                     ),
-                                  ].divide(const SizedBox(width: 16.0)),
+                                  ].divide(SizedBox(width: 16.0)),
                                 ),
                                 Container(
                                   width: 60.0,
@@ -198,7 +200,7 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                                     borderRadius: BorderRadius.circular(30.0),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding: EdgeInsets.all(8.0),
                                     child: Text(
                                       '95',
                                       textAlign: TextAlign.center,
@@ -232,7 +234,7 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 16.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -251,7 +253,7 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                                             BorderRadius.circular(25.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
+                                        padding: EdgeInsets.all(8.0),
                                         child: Text(
                                           'JS',
                                           textAlign: TextAlign.center,
@@ -299,7 +301,7 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                                         ),
                                       ],
                                     ),
-                                  ].divide(const SizedBox(width: 16.0)),
+                                  ].divide(SizedBox(width: 16.0)),
                                 ),
                                 Container(
                                   width: 60.0,
@@ -309,7 +311,7 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                                     borderRadius: BorderRadius.circular(30.0),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding: EdgeInsets.all(8.0),
                                     child: Text(
                                       '82',
                                       textAlign: TextAlign.center,
@@ -343,7 +345,7 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 16.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -362,7 +364,7 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                                             BorderRadius.circular(25.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
+                                        padding: EdgeInsets.all(8.0),
                                         child: Text(
                                           'RJ',
                                           textAlign: TextAlign.center,
@@ -410,7 +412,7 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                                         ),
                                       ],
                                     ),
-                                  ].divide(const SizedBox(width: 16.0)),
+                                  ].divide(SizedBox(width: 16.0)),
                                 ),
                                 Container(
                                   width: 60.0,
@@ -420,7 +422,7 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                                     borderRadius: BorderRadius.circular(30.0),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding: EdgeInsets.all(8.0),
                                     child: Text(
                                       '78',
                                       textAlign: TextAlign.center,
@@ -454,7 +456,7 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 16.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -473,7 +475,7 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                                             BorderRadius.circular(25.0),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
+                                        padding: EdgeInsets.all(8.0),
                                         child: Text(
                                           'EW',
                                           textAlign: TextAlign.center,
@@ -521,7 +523,7 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                                         ),
                                       ],
                                     ),
-                                  ].divide(const SizedBox(width: 16.0)),
+                                  ].divide(SizedBox(width: 16.0)),
                                 ),
                                 Container(
                                   width: 60.0,
@@ -531,7 +533,7 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                                     borderRadius: BorderRadius.circular(30.0),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding: EdgeInsets.all(8.0),
                                     child: Text(
                                       '91',
                                       textAlign: TextAlign.center,
@@ -551,7 +553,7 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                           ),
                         ),
                       ),
-                    ].divide(const SizedBox(height: 12.0)),
+                    ].divide(SizedBox(height: 12.0)),
                   ),
                   FFButtonWidget(
                     onPressed: () {
@@ -562,9 +564,9 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -576,7 +578,7 @@ class _TeacherViewWidgetState extends State<TeacherViewWidget> {
                       borderRadius: BorderRadius.circular(25.0),
                     ),
                   ),
-                ].divide(const SizedBox(height: 24.0)),
+                ].divide(SizedBox(height: 24.0)),
               ),
             ),
           ),

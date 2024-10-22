@@ -1,6 +1,9 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'quiz_sets_model.dart';
 export 'quiz_sets_model.dart';
 
@@ -51,7 +54,7 @@ class _QuizSetsWidgetState extends State<QuizSetsWidget> {
     return Material(
       color: Colors.transparent,
       elevation: 5.0,
-      shape: const RoundedRectangleBorder(
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(12.0),
           bottomRight: Radius.circular(12.0),
@@ -64,7 +67,7 @@ class _QuizSetsWidgetState extends State<QuizSetsWidget> {
         height: 120.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).info,
-          borderRadius: const BorderRadius.only(
+          borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(12.0),
             bottomRight: Radius.circular(12.0),
             topLeft: Radius.circular(12.0),
@@ -80,7 +83,7 @@ class _QuizSetsWidgetState extends State<QuizSetsWidget> {
           children: [
             Flexible(
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 0.0, 12.0),
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 12.0, 0.0, 12.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -95,7 +98,7 @@ class _QuizSetsWidgetState extends State<QuizSetsWidget> {
                           children: [
                             Text(
                               valueOrDefault<String>(
-                                widget.name,
+                                widget!.name,
                                 'd',
                               ),
                               maxLines: 2,
@@ -115,7 +118,7 @@ class _QuizSetsWidgetState extends State<QuizSetsWidget> {
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        const Icon(
+                        Icon(
                           Icons.equalizer,
                           color: Color(0xFFEB0D0D),
                           size: 16.0,
@@ -123,7 +126,7 @@ class _QuizSetsWidgetState extends State<QuizSetsWidget> {
                         Opacity(
                           opacity: 0.7,
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 6.0, 0.0, 0.0, 0.0),
                             child: RichText(
                               textScaler: MediaQuery.of(context).textScaler,
@@ -131,7 +134,7 @@ class _QuizSetsWidgetState extends State<QuizSetsWidget> {
                                 children: [
                                   TextSpan(
                                     text: valueOrDefault<String>(
-                                      widget.qun?.toString(),
+                                      widget!.qun?.toString(),
                                       '0',
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -164,7 +167,7 @@ class _QuizSetsWidgetState extends State<QuizSetsWidget> {
                             ),
                           ),
                         ),
-                        const Padding(
+                        Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               12.0, 0.0, 0.0, 0.0),
                           child: Icon(
@@ -176,7 +179,7 @@ class _QuizSetsWidgetState extends State<QuizSetsWidget> {
                         Opacity(
                           opacity: 0.7,
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 6.0, 0.0, 0.0, 0.0),
                             child: RichText(
                               textScaler: MediaQuery.of(context).textScaler,
@@ -184,7 +187,7 @@ class _QuizSetsWidgetState extends State<QuizSetsWidget> {
                                 children: [
                                   TextSpan(
                                     text: valueOrDefault<String>(
-                                      widget.dur?.toString(),
+                                      widget!.dur?.toString(),
                                       '2',
                                     ),
                                     style: FlutterFlowTheme.of(context)
@@ -232,7 +235,7 @@ class _QuizSetsWidgetState extends State<QuizSetsWidget> {
                   height: 42.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).info,
-                    borderRadius: const BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(0.0),
                       bottomRight: Radius.circular(12.0),
                       topLeft: Radius.circular(12.0),

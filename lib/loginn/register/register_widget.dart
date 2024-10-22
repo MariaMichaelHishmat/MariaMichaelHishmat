@@ -3,6 +3,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'register_model.dart';
 export 'register_model.dart';
 
@@ -64,7 +66,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                         Container(
                           width: 110.0,
                           height: 110.0,
-                          decoration: const BoxDecoration(
+                          decoration: BoxDecoration(
                             shape: BoxShape.circle,
                           ),
                           child: ClipRRect(
@@ -87,7 +89,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                       child: Text(
                         'Over 10 Years Experience',
                         style: FlutterFlowTheme.of(context).labelLarge.override(
@@ -102,13 +104,13 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 50.0, 0.0, 50.0),
                         child: Text(
                           'Register To Your Acount',
@@ -129,7 +131,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 0.0, 0.0),
                       child: Icon(
                         Icons.email,
                         color: FlutterFlowTheme.of(context).primary,
@@ -138,9 +140,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                     Expanded(
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             12.0, 12.0, 24.0, 0.0),
-                        child: SizedBox(
+                        child: Container(
                           width: 200.0,
                           child: TextFormField(
                             controller: _model.textController1,
@@ -213,7 +215,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(20.0, 15.0, 0.0, 0.0),
                       child: Icon(
                         Icons.password_sharp,
                         color: FlutterFlowTheme.of(context).primary,
@@ -222,9 +224,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                     ),
                     Expanded(
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             12.0, 24.0, 24.0, 0.0),
-                        child: SizedBox(
+                        child: Container(
                           width: 200.0,
                           child: TextFormField(
                             controller: _model.textController2,
@@ -306,7 +308,7 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                   ],
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 48.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 48.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       await SQLiteManager.instance.addUser(
@@ -322,9 +324,9 @@ class _RegisterWidgetState extends State<RegisterWidget> {
                       width: 200.0,
                       height: 40.0,
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(

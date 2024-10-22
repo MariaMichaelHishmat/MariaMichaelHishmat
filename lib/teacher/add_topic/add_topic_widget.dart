@@ -2,7 +2,10 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'add_topic_model.dart';
 export 'add_topic_model.dart';
 
@@ -82,7 +85,7 @@ class _AddTopicWidgetState extends State<AddTopicWidget> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: EdgeInsets.all(10.0),
             child: StreamBuilder<List<TopicsRecord>>(
               stream: queryTopicsRecord(
                 singleRecord: true,
@@ -115,7 +118,7 @@ class _AddTopicWidgetState extends State<AddTopicWidget> {
                     children: [
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                         child: Text(
                           'AddTopics',
                           style:
@@ -129,8 +132,8 @@ class _AddTopicWidgetState extends State<AddTopicWidget> {
                       ),
                       Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 8.0, 12.0),
-                        child: SizedBox(
+                            EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 8.0, 12.0),
+                        child: Container(
                           width: double.infinity,
                           child: TextFormField(
                             controller: _model.textController,
@@ -196,7 +199,7 @@ class _AddTopicWidgetState extends State<AddTopicWidget> {
                       ),
                       FFButtonWidget(
                         onPressed: () async {
-                          final datePickedDate = await showDatePicker(
+                          final _datePickedDate = await showDatePicker(
                             context: context,
                             initialDate: getCurrentTimestamp,
                             firstDate: DateTime(1900),
@@ -233,12 +236,12 @@ class _AddTopicWidgetState extends State<AddTopicWidget> {
                             },
                           );
 
-                          if (datePickedDate != null) {
+                          if (_datePickedDate != null) {
                             safeSetState(() {
                               _model.datePicked = DateTime(
-                                datePickedDate.year,
-                                datePickedDate.month,
-                                datePickedDate.day,
+                                _datePickedDate.year,
+                                _datePickedDate.month,
+                                _datePickedDate.day,
                               );
                             });
                           }
@@ -247,9 +250,9 @@ class _AddTopicWidgetState extends State<AddTopicWidget> {
                         options: FFButtonOptions(
                           width: 320.0,
                           height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).info,
                           textStyle:
@@ -274,9 +277,9 @@ class _AddTopicWidgetState extends State<AddTopicWidget> {
                         text: 'Add Topic',
                         options: FFButtonOptions(
                           height: 40.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               16.0, 0.0, 16.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
                           color: FlutterFlowTheme.of(context).primary,
                           textStyle:
@@ -289,7 +292,7 @@ class _AddTopicWidgetState extends State<AddTopicWidget> {
                           borderRadius: BorderRadius.circular(10.0),
                         ),
                       ),
-                    ].divide(const SizedBox(height: 30.0)),
+                    ].divide(SizedBox(height: 30.0)),
                   ),
                 );
               },

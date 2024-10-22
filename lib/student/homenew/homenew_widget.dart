@@ -2,7 +2,10 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'homenew_model.dart';
 export 'homenew_model.dart';
 
@@ -40,7 +43,7 @@ class _HomenewWidgetState extends State<HomenewWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).info,
-        drawer: const Drawer(
+        drawer: Drawer(
           elevation: 16.0,
         ),
         appBar: AppBar(
@@ -51,7 +54,7 @@ class _HomenewWidgetState extends State<HomenewWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -69,7 +72,7 @@ class _HomenewWidgetState extends State<HomenewWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
@@ -83,7 +86,7 @@ class _HomenewWidgetState extends State<HomenewWidget> {
               children: [
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+                      EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
                   child: SingleChildScrollView(
                     primary: false,
                     child: Column(
@@ -104,7 +107,7 @@ class _HomenewWidgetState extends State<HomenewWidget> {
                             ),
                           ],
                         ),
-                      ].divide(const SizedBox(height: 48.0)),
+                      ].divide(SizedBox(height: 48.0)),
                     ),
                   ),
                 ),
@@ -131,7 +134,7 @@ class _HomenewWidgetState extends State<HomenewWidget> {
                         snapshot.data!;
 
                     return ListView.separated(
-                      padding: const EdgeInsets.fromLTRB(
+                      padding: EdgeInsets.fromLTRB(
                         0,
                         0,
                         0,
@@ -141,7 +144,7 @@ class _HomenewWidgetState extends State<HomenewWidget> {
                       shrinkWrap: true,
                       scrollDirection: Axis.vertical,
                       itemCount: listViewChapterRecordList.length,
-                      separatorBuilder: (_, __) => const SizedBox(height: 12.0),
+                      separatorBuilder: (_, __) => SizedBox(height: 12.0),
                       itemBuilder: (context, listViewIndex) {
                         final listViewChapterRecord =
                             listViewChapterRecordList[listViewIndex];
@@ -149,7 +152,7 @@ class _HomenewWidgetState extends State<HomenewWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 0.0, 10.0, 0.0),
                               child: Material(
                                 color: Colors.transparent,
@@ -212,10 +215,10 @@ class _HomenewWidgetState extends State<HomenewWidget> {
                                                 CrossAxisAlignment.center,
                                             children: [
                                               Align(
-                                                alignment: const AlignmentDirectional(
+                                                alignment: AlignmentDirectional(
                                                     -1.0, 0.0),
                                                 child: Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           12.0, 0.0, 0.0, 0.0),
                                                   child: ClipRRect(
@@ -236,7 +239,7 @@ class _HomenewWidgetState extends State<HomenewWidget> {
                                         },
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             120.0, 48.0, 12.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -245,7 +248,7 @@ class _HomenewWidgetState extends State<HomenewWidget> {
                                           children: [
                                             Flexible(
                                               child: Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 24.0, 0.0),
                                                 child: Text(
@@ -262,7 +265,7 @@ class _HomenewWidgetState extends State<HomenewWidget> {
                                                     letterSpacing: 0.0,
                                                     fontWeight: FontWeight.bold,
                                                     shadows: [
-                                                      const Shadow(
+                                                      Shadow(
                                                         color:
                                                             Color(0xBC677681),
                                                         offset:
@@ -278,7 +281,7 @@ class _HomenewWidgetState extends State<HomenewWidget> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             300.0, 0.0, 0.0, 0.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -294,7 +297,7 @@ class _HomenewWidgetState extends State<HomenewWidget> {
                                                       .spaceBetween,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 10.0, 5.0),
                                                   child: FlutterFlowIconButton(

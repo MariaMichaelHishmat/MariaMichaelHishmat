@@ -4,7 +4,11 @@ import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'course_details_model.dart';
 export 'course_details_model.dart';
 
@@ -56,7 +60,7 @@ class _CourseDetailsWidgetState extends State<CourseDetailsWidget>
       stream: queryChapterRecord(
         queryBuilder: (chapterRecord) => chapterRecord.where(
           'name',
-          isEqualTo: widget.chn,
+          isEqualTo: widget!.chn,
         ),
         singleRecord: true,
       ),
@@ -97,7 +101,7 @@ class _CourseDetailsWidgetState extends State<CourseDetailsWidget>
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: const Icon(
+                icon: Icon(
                   Icons.arrow_back_rounded,
                   color: Colors.white,
                   size: 30.0,
@@ -115,14 +119,14 @@ class _CourseDetailsWidgetState extends State<CourseDetailsWidget>
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: true,
               elevation: 2.0,
             ),
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: EdgeInsets.all(10.0),
                 child: StreamBuilder<List<TopicsOfUserRecord>>(
                   stream: queryTopicsOfUserRecord(
                     singleRecord: true,
@@ -183,12 +187,12 @@ class _CourseDetailsWidgetState extends State<CourseDetailsWidget>
                             verticalDirection: VerticalDirection.down,
                             clipBehavior: Clip.none,
                             children: [
-                              SizedBox(
+                              Container(
                                 height: 570.0,
                                 child: Column(
                                   children: [
                                     Align(
-                                      alignment: const Alignment(0.0, 0),
+                                      alignment: Alignment(0.0, 0),
                                       child: FlutterFlowButtonTabBar(
                                         useToggleButtonStyle: false,
                                         labelStyle: FlutterFlowTheme.of(context)
@@ -225,9 +229,9 @@ class _CourseDetailsWidgetState extends State<CourseDetailsWidget>
                                         borderRadius: 8.0,
                                         elevation: 0.0,
                                         buttonMargin:
-                                            const EdgeInsetsDirectional.fromSTEB(
+                                            EdgeInsetsDirectional.fromSTEB(
                                                 8.0, 0.0, 8.0, 0.0),
-                                        tabs: const [
+                                        tabs: [
                                           Tab(
                                             text: 'Sessions',
                                           ),
@@ -254,7 +258,7 @@ class _CourseDetailsWidgetState extends State<CourseDetailsWidget>
                                                         (topicsRecord) =>
                                                             topicsRecord.where(
                                                       'chapterRef',
-                                                      isEqualTo: widget.ch,
+                                                      isEqualTo: widget!.ch,
                                                     ),
                                                   ),
                                                   builder: (context, snapshot) {
@@ -283,7 +287,7 @@ class _CourseDetailsWidgetState extends State<CourseDetailsWidget>
 
                                                     return ListView.separated(
                                                       padding:
-                                                          const EdgeInsets.symmetric(
+                                                          EdgeInsets.symmetric(
                                                               vertical: 20.0),
                                                       primary: false,
                                                       shrinkWrap: true,
@@ -293,7 +297,7 @@ class _CourseDetailsWidgetState extends State<CourseDetailsWidget>
                                                           listViewTopicsRecordList
                                                               .length,
                                                       separatorBuilder:
-                                                          (_, __) => const SizedBox(
+                                                          (_, __) => SizedBox(
                                                               height: 20.0),
                                                       itemBuilder: (context,
                                                           listViewIndex) {
@@ -344,7 +348,7 @@ class _CourseDetailsWidgetState extends State<CourseDetailsWidget>
                                                                     ),
                                                                     'ch':
                                                                         serializeParam(
-                                                                      widget
+                                                                      widget!
                                                                           .ch,
                                                                       ParamType
                                                                           .DocumentReference,
@@ -373,7 +377,7 @@ class _CourseDetailsWidgetState extends State<CourseDetailsWidget>
                                                                         padding:
                                                                             MediaQuery.viewInsetsOf(context),
                                                                         child:
-                                                                            const SizedBox(
+                                                                            Container(
                                                                           height:
                                                                               500.0,
                                                                           child:
@@ -404,7 +408,7 @@ class _CourseDetailsWidgetState extends State<CourseDetailsWidget>
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsets
+                                                                  EdgeInsets
                                                                       .all(
                                                                           25.0),
                                                               child: Row(
@@ -446,7 +450,7 @@ class _CourseDetailsWidgetState extends State<CourseDetailsWidget>
                                                                               children: [
                                                                                 Icon(
                                                                                   Icons.circle_sharp,
-                                                                                  color: listViewTopicsRecord.time! <= getCurrentTimestamp ? const Color(0xFFAA2525) : const Color(0xFF247313),
+                                                                                  color: listViewTopicsRecord.time! <= getCurrentTimestamp ? Color(0xFFAA2525) : Color(0xFF247313),
                                                                                   size: 24.0,
                                                                                 ),
                                                                               ],
@@ -470,11 +474,11 @@ class _CourseDetailsWidgetState extends State<CourseDetailsWidget>
                                                                             ),
                                                                           ],
                                                                         ),
-                                                                      ].divide(const SizedBox(
+                                                                      ].divide(SizedBox(
                                                                               height: 5.0)),
                                                                     ),
                                                                   ),
-                                                                ].divide(const SizedBox(
+                                                                ].divide(SizedBox(
                                                                     width:
                                                                         10.0)),
                                                               ),
@@ -496,7 +500,7 @@ class _CourseDetailsWidgetState extends State<CourseDetailsWidget>
                               ),
                             ],
                           ),
-                        ].divide(const SizedBox(height: 20.0)),
+                        ].divide(SizedBox(height: 20.0)),
                       ),
                     );
                   },

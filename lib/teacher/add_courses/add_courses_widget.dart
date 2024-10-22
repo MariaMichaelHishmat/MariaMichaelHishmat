@@ -4,6 +4,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'add_courses_model.dart';
 export 'add_courses_model.dart';
 
@@ -50,14 +52,14 @@ class _AddCoursesWidgetState extends State<AddCoursesWidget> {
         color: FlutterFlowTheme.of(context).info,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: EdgeInsets.all(10.0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                 child: Text(
                   'AddCourse',
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -69,8 +71,8 @@ class _AddCoursesWidgetState extends State<AddCoursesWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 24.0),
-                child: SizedBox(
+                padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 24.0),
+                child: Container(
                   width: double.infinity,
                   child: TextFormField(
                     controller: _model.textController,
@@ -133,10 +135,10 @@ class _AddCoursesWidgetState extends State<AddCoursesWidget> {
               wrapWithModel(
                 model: _model.quesphotoModel,
                 updateCallback: () => safeSetState(() {}),
-                child: const QuesphotoWidget(),
+                child: QuesphotoWidget(),
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
                     await SQLiteManager.instance.addChapter(
@@ -149,9 +151,9 @@ class _AddCoursesWidgetState extends State<AddCoursesWidget> {
                   options: FFButtonOptions(
                     height: 40.0,
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',
@@ -163,7 +165,7 @@ class _AddCoursesWidgetState extends State<AddCoursesWidget> {
                   ),
                 ),
               ),
-            ].divide(const SizedBox(height: 10.0)),
+            ].divide(SizedBox(height: 10.0)),
           ),
         ),
       ),

@@ -1,9 +1,17 @@
+import '/backend/backend.dart';
+import '/components/ques_widget.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/instant_timer.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'qui_widget.dart' show QuiWidget;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class QuiModel extends FlutterFlowModel<QuiWidget> {
   ///  Local state fields for this page.

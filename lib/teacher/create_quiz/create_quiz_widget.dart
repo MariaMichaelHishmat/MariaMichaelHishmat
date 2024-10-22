@@ -5,6 +5,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'create_quiz_model.dart';
 export 'create_quiz_model.dart';
 
@@ -90,7 +92,7 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: const Icon(
+                icon: Icon(
                   Icons.arrow_back_rounded,
                   color: Colors.white,
                   size: 30.0,
@@ -108,12 +110,12 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: true,
               elevation: 2.0,
             ),
             body: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(24.0, 100.0, 24.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(24.0, 100.0, 24.0, 0.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -137,7 +139,7 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 24.0, 24.0, 24.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -178,14 +180,14 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   errorBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Color(0x00000000),
                                       width: 3.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Color(0x00000000),
                                       width: 3.0,
                                     ),
@@ -226,14 +228,14 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   errorBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Color(0x00000000),
                                       width: 3.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Color(0x00000000),
                                       width: 3.0,
                                     ),
@@ -251,14 +253,14 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                                 validator: _model.textController2Validator
                                     .asValidator(context),
                               ),
-                            ].divide(const SizedBox(height: 50.0)),
+                            ].divide(SizedBox(height: 50.0)),
                           ),
                         ),
                       ),
                     ),
                     FutureBuilder<List<QuizSetListRow>>(
                       future: SQLiteManager.instance.quizSetList(
-                        id: widget.tid,
+                        id: widget!.tid,
                       ),
                       builder: (context, snapshot) {
                         // Customize what your widget looks like when it's loading.
@@ -283,14 +285,14 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                               name: _model.textController1.text,
                               duration:
                                   int.tryParse(_model.textController2.text),
-                              quizsetId: widget.tid,
+                              quizsetId: widget!.tid,
                             );
 
                             context.pushNamed(
                               'showset',
                               queryParameters: {
                                 'tid': serializeParam(
-                                  widget.tid,
+                                  widget!.tid,
                                   ParamType.int,
                                 ),
                               }.withoutNulls,
@@ -300,9 +302,9 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 56.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -318,7 +320,7 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                         );
                       },
                     ),
-                  ].divide(const SizedBox(height: 24.0)),
+                  ].divide(SizedBox(height: 24.0)),
                 ),
               ),
             ),

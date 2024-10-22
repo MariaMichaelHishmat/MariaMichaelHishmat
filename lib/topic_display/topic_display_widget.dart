@@ -6,8 +6,12 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/instant_timer.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'topic_display_model.dart';
 export 'topic_display_model.dart';
 
@@ -42,7 +46,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.instantTimer = InstantTimer.periodic(
-        duration: const Duration(milliseconds: 1000),
+        duration: Duration(milliseconds: 1000),
         callback: (timer) async {
           _model.timerController.onStartTimer();
         },
@@ -66,7 +70,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
       stream: queryQuizsetRecord(
         queryBuilder: (quizsetRecord) => quizsetRecord.where(
           'topic_ref',
-          isEqualTo: widget.tro,
+          isEqualTo: widget!.tro,
         ),
         singleRecord: true,
       ),
@@ -103,7 +107,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
               backgroundColor: FlutterFlowTheme.of(context).primary,
               automaticallyImplyLeading: false,
               leading: StreamBuilder<ChapterRecord>(
-                stream: ChapterRecord.getDocument(widget.ch!),
+                stream: ChapterRecord.getDocument(widget!.ch!),
                 builder: (context, snapshot) {
                   // Customize what your widget looks like when it's loading.
                   if (!snapshot.hasData) {
@@ -127,7 +131,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                     borderRadius: 30.0,
                     borderWidth: 1.0,
                     buttonSize: 60.0,
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.arrow_back_rounded,
                       color: Colors.white,
                       size: 30.0,
@@ -137,7 +141,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                         'course_Details',
                         queryParameters: {
                           'ch': serializeParam(
-                            widget.ch,
+                            widget!.ch,
                             ParamType.DocumentReference,
                           ),
                           'chn': serializeParam(
@@ -145,7 +149,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                             ParamType.String,
                           ),
                           'tro': serializeParam(
-                            widget.tro,
+                            widget!.tro,
                             ParamType.DocumentReference,
                           ),
                         }.withoutNulls,
@@ -163,16 +167,16 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: true,
               elevation: 2.0,
             ),
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(10.0, 70.0, 10.0, 16.0),
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 70.0, 10.0, 16.0),
                 child: StreamBuilder<TopicsRecord>(
-                  stream: TopicsRecord.getDocument(widget.tro!),
+                  stream: TopicsRecord.getDocument(widget!.tro!),
                   builder: (context, snapshot) {
                     // Customize what your widget looks like when it's loading.
                     if (!snapshot.hasData) {
@@ -199,7 +203,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     6.0, 0.0, 0.0, 0.0),
                                 child: Material(
                                   color: Colors.transparent,
@@ -231,7 +235,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                                               MainAxisAlignment.center,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       12.0, 0.0, 0.0, 0.0),
                                               child: Icon(
@@ -246,7 +250,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 12.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -267,7 +271,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                                                             milliSecond: false),
                                                 controller:
                                                     _model.timerController,
-                                                updateStateInterval: const Duration(
+                                                updateStateInterval: Duration(
                                                     milliseconds: 1000),
                                                 onChanged: (value, displayTime,
                                                     shouldUpdate) {
@@ -275,9 +279,8 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                                                       value;
                                                   _model.timerValue =
                                                       displayTime;
-                                                  if (shouldUpdate) {
+                                                  if (shouldUpdate)
                                                     safeSetState(() {});
-                                                  }
                                                 },
                                                 textAlign: TextAlign.start,
                                                 style:
@@ -306,7 +309,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                               queryBuilder: (quizsetRecord) =>
                                   quizsetRecord.where(
                                 'quizset_ref',
-                                isEqualTo: widget.qq,
+                                isEqualTo: widget!.qq,
                               ),
                               singleRecord: true,
                             ),
@@ -351,7 +354,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 16.0, 16.0, 16.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
@@ -406,7 +409,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                                               MainAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 5.0, 0.0),
                                               child: Icon(
                                                 Icons.timer_sharp,
@@ -420,7 +423,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                                               valueOrDefault<String>(
                                                 topicDisplayQuizsetRecord
                                                     ?.duration
-                                                    .toString(),
+                                                    ?.toString(),
                                                 '1',
                                               ),
                                               style:
@@ -442,14 +445,14 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                                                       ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       110.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 valueOrDefault<String>(
                                                   topicDisplayQuizsetRecord
                                                       ?.totalQuestions
-                                                      .toString(),
+                                                      ?.toString(),
                                                   '00',
                                                 ),
                                                 style:
@@ -479,11 +482,11 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                                               'qui',
                                               queryParameters: {
                                                 'tt': serializeParam(
-                                                  widget.tro,
+                                                  widget!.tro,
                                                   ParamType.DocumentReference,
                                                 ),
                                                 'qq': serializeParam(
-                                                  widget.qq,
+                                                  widget!.qq,
                                                   ParamType.DocumentReference,
                                                 ),
                                               }.withoutNulls,
@@ -496,10 +499,10 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                                                 1.0,
                                             height: 48.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
@@ -516,7 +519,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                                                 BorderRadius.circular(24.0),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(height: 16.0)),
+                                      ].divide(SizedBox(height: 16.0)),
                                     ),
                                   ),
                                 ),
@@ -553,7 +556,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 16.0, 16.0, 16.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
@@ -591,7 +594,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                                                   TextSpan(
                                                     text: columnTopicsRecord
                                                         .vid1n,
-                                                    style: const TextStyle(),
+                                                    style: TextStyle(),
                                                   )
                                                 ],
                                                 style:
@@ -639,12 +642,13 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                                         size: 48.0,
                                       ),
                                     ),
-                                  ].divide(const SizedBox(height: 16.0)),
+                                  ].divide(SizedBox(height: 16.0)),
                                 ),
                               ),
                             ),
                           ),
-                          if (columnTopicsRecord.vid2n != '')
+                          if (columnTopicsRecord.vid2n != null &&
+                              columnTopicsRecord.vid2n != '')
                             Material(
                               color: Colors.transparent,
                               elevation: 5.0,
@@ -663,7 +667,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 16.0, 16.0, 16.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -702,7 +706,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                                                     TextSpan(
                                                       text: columnTopicsRecord
                                                           .vid2n,
-                                                      style: const TextStyle(),
+                                                      style: TextStyle(),
                                                     )
                                                   ],
                                                   style: FlutterFlowTheme.of(
@@ -751,12 +755,13 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                                           size: 48.0,
                                         ),
                                       ),
-                                    ].divide(const SizedBox(height: 16.0)),
+                                    ].divide(SizedBox(height: 16.0)),
                                   ),
                                 ),
                               ),
                             ),
-                          if (columnTopicsRecord.vid3n != '')
+                          if (columnTopicsRecord.vid3n != null &&
+                              columnTopicsRecord.vid3n != '')
                             Material(
                               color: Colors.transparent,
                               elevation: 5.0,
@@ -775,7 +780,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 16.0, 16.0, 16.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
@@ -814,7 +819,7 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                                                     TextSpan(
                                                       text: columnTopicsRecord
                                                           .vid3n,
-                                                      style: const TextStyle(),
+                                                      style: TextStyle(),
                                                     )
                                                   ],
                                                   style: FlutterFlowTheme.of(
@@ -863,12 +868,12 @@ class _TopicDisplayWidgetState extends State<TopicDisplayWidget> {
                                           size: 48.0,
                                         ),
                                       ),
-                                    ].divide(const SizedBox(height: 16.0)),
+                                    ].divide(SizedBox(height: 16.0)),
                                   ),
                                 ),
                               ),
                             ),
-                        ].divide(const SizedBox(height: 24.0)),
+                        ].divide(SizedBox(height: 24.0)),
                       ),
                     );
                   },

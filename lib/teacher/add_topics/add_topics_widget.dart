@@ -3,8 +3,11 @@ import '/backend/sqlite/sqlite_manager.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/teacher/add_topic/add_topic_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'add_topics_model.dart';
 export 'add_topics_model.dart';
 
@@ -87,7 +90,7 @@ class _AddTopicsWidgetState extends State<AddTopicsWidget> {
                       onTap: () => FocusScope.of(context).unfocus(),
                       child: Padding(
                         padding: MediaQuery.viewInsetsOf(context),
-                        child: const SizedBox(
+                        child: Container(
                           height: 800.0,
                           child: AddTopicWidget(
                             chid: 0,
@@ -114,7 +117,7 @@ class _AddTopicsWidgetState extends State<AddTopicsWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: const Icon(
+                icon: Icon(
                   Icons.arrow_back_rounded,
                   color: Colors.white,
                   size: 30.0,
@@ -132,12 +135,12 @@ class _AddTopicsWidgetState extends State<AddTopicsWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: false,
               elevation: 0.0,
             ),
             body: Padding(
-              padding: const EdgeInsets.all(22.0),
+              padding: EdgeInsets.all(22.0),
               child: SingleChildScrollView(
                 primary: false,
                 child: Column(
@@ -160,7 +163,7 @@ class _AddTopicsWidgetState extends State<AddTopicsWidget> {
                     ),
                     FutureBuilder<List<TopicsListRow>>(
                       future: SQLiteManager.instance.topicsList(
-                        id: widget.chi,
+                        id: widget!.chi,
                       ),
                       builder: (context, snapshot) {
                         // Customize what your widget looks like when it's loading.
@@ -185,7 +188,7 @@ class _AddTopicsWidgetState extends State<AddTopicsWidget> {
                           shrinkWrap: true,
                           scrollDirection: Axis.vertical,
                           itemCount: listViewTopicsListRowList.length,
-                          separatorBuilder: (_, __) => const SizedBox(height: 20.0),
+                          separatorBuilder: (_, __) => SizedBox(height: 20.0),
                           itemBuilder: (context, listViewIndex) {
                             final listViewTopicsListRow =
                                 listViewTopicsListRowList[listViewIndex];
@@ -207,7 +210,7 @@ class _AddTopicsWidgetState extends State<AddTopicsWidget> {
                                     ),
                                   }.withoutNulls,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                     ),
@@ -234,7 +237,7 @@ class _AddTopicsWidgetState extends State<AddTopicsWidget> {
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsets.all(5.0),
+                                    padding: EdgeInsets.all(5.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       crossAxisAlignment:
@@ -252,7 +255,7 @@ class _AddTopicsWidgetState extends State<AddTopicsWidget> {
                                         ),
                                         Expanded(
                                           child: Padding(
-                                            padding: const EdgeInsets.all(10.0),
+                                            padding: EdgeInsets.all(10.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -312,7 +315,7 @@ class _AddTopicsWidgetState extends State<AddTopicsWidget> {
                                                           children: [
                                                             Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           6.0,
@@ -341,7 +344,7 @@ class _AddTopicsWidgetState extends State<AddTopicsWidget> {
                                             ),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(width: 15.0)),
+                                      ].divide(SizedBox(width: 15.0)),
                                     ),
                                   ),
                                 ),
@@ -351,7 +354,7 @@ class _AddTopicsWidgetState extends State<AddTopicsWidget> {
                         );
                       },
                     ),
-                  ].divide(const SizedBox(height: 20.0)),
+                  ].divide(SizedBox(height: 20.0)),
                 ),
               ),
             ),

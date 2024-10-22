@@ -2,8 +2,12 @@ import '/backend/sqlite/sqlite_manager.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/teacher/add_courses/add_courses_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'addcourse_model.dart';
 export 'addcourse_model.dart';
 
@@ -53,7 +57,7 @@ class _AddcourseWidgetState extends State<AddcourseWidget> {
                   onTap: () => FocusScope.of(context).unfocus(),
                   child: Padding(
                     padding: MediaQuery.viewInsetsOf(context),
-                    child: const AddCoursesWidget(),
+                    child: AddCoursesWidget(),
                   ),
                 );
               },
@@ -75,7 +79,7 @@ class _AddcourseWidgetState extends State<AddcourseWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -93,14 +97,14 @@ class _AddcourseWidgetState extends State<AddcourseWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsets.all(22.0),
+            padding: EdgeInsets.all(22.0),
             child: SingleChildScrollView(
               primary: false,
               child: Column(
@@ -147,7 +151,7 @@ class _AddcourseWidgetState extends State<AddcourseWidget> {
                             shrinkWrap: true,
                             scrollDirection: Axis.vertical,
                             itemCount: listViewChaptersLISTRowList.length,
-                            separatorBuilder: (_, __) => const SizedBox(height: 20.0),
+                            separatorBuilder: (_, __) => SizedBox(height: 20.0),
                             itemBuilder: (context, listViewIndex) {
                               final listViewChaptersLISTRow =
                                   listViewChaptersLISTRowList[listViewIndex];
@@ -186,7 +190,7 @@ class _AddcourseWidgetState extends State<AddcourseWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(5.0),
+                                      padding: EdgeInsets.all(5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         crossAxisAlignment:
@@ -204,7 +208,7 @@ class _AddcourseWidgetState extends State<AddcourseWidget> {
                                           ),
                                           Expanded(
                                             child: Padding(
-                                              padding: const EdgeInsets.all(10.0),
+                                              padding: EdgeInsets.all(10.0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -238,7 +242,7 @@ class _AddcourseWidgetState extends State<AddcourseWidget> {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      const Icon(
+                                                      Icon(
                                                         Icons.circle,
                                                         color:
                                                             Color(0xFF39AB21),
@@ -246,7 +250,7 @@ class _AddcourseWidgetState extends State<AddcourseWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     10.0,
                                                                     0.0,
@@ -274,7 +278,7 @@ class _AddcourseWidgetState extends State<AddcourseWidget> {
                                               ),
                                             ),
                                           ),
-                                        ].divide(const SizedBox(width: 15.0)),
+                                        ].divide(SizedBox(width: 15.0)),
                                       ),
                                     ),
                                   ),
@@ -286,7 +290,7 @@ class _AddcourseWidgetState extends State<AddcourseWidget> {
                       ),
                     ],
                   ),
-                ].divide(const SizedBox(height: 20.0)),
+                ].divide(SizedBox(height: 20.0)),
               ),
             ),
           ),

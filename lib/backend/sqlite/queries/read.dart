@@ -12,14 +12,14 @@ Future<List<T>> _readQuery<T>(
 Future<List<ChaptersLISTRow>> performChaptersLIST(
   Database database,
 ) {
-  const query = '''
+  final query = '''
 select * from Chapter'
 ''';
   return _readQuery(database, query, (d) => ChaptersLISTRow(d));
 }
 
 class ChaptersLISTRow extends SqliteRow {
-  ChaptersLISTRow(super.data);
+  ChaptersLISTRow(Map<String, dynamic> data) : super(data);
 
   int? get id => data['id'] as int?;
   String? get name => data['name'] as String?;
@@ -32,14 +32,14 @@ class ChaptersLISTRow extends SqliteRow {
 Future<List<UserListRow>> performUserList(
   Database database,
 ) {
-  const query = '''
+  final query = '''
 select * from user
 ''';
   return _readQuery(database, query, (d) => UserListRow(d));
 }
 
 class UserListRow extends SqliteRow {
-  UserListRow(super.data);
+  UserListRow(Map<String, dynamic> data) : super(data);
 
   String? get name => data['name'] as String?;
   String? get email => data['email'] as String?;
@@ -59,13 +59,13 @@ Future<List<TopicsListRow>> performTopicsList(
 }) {
   final query = '''
 select * from Topics
-WHERE topic_id='$id'
+WHERE topic_id='${id}'
 ''';
   return _readQuery(database, query, (d) => TopicsListRow(d));
 }
 
 class TopicsListRow extends SqliteRow {
-  TopicsListRow(super.data);
+  TopicsListRow(Map<String, dynamic> data) : super(data);
 
   String? get name => data['name'] as String?;
   String? get img => data['img'] as String?;
@@ -87,13 +87,13 @@ Future<List<QuizSetListRow>> performQuizSetList(
 }) {
   final query = '''
 select * from QuizSet
-WHERE quizset_id='$id'
+WHERE quizset_id='${id}'
 ''';
   return _readQuery(database, query, (d) => QuizSetListRow(d));
 }
 
 class QuizSetListRow extends SqliteRow {
-  QuizSetListRow(super.data);
+  QuizSetListRow(Map<String, dynamic> data) : super(data);
 
   String? get name => data['name'] as String?;
   int? get duration => data['duration'] as int?;

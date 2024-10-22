@@ -2,7 +2,11 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'score_page_model.dart';
 export 'score_page_model.dart';
 
@@ -45,7 +49,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuizsetRecord>(
-      stream: QuizsetRecord.getDocument(widget.qq!),
+      stream: QuizsetRecord.getDocument(widget!.qq!),
       builder: (context, snapshot) {
         // Customize what your widget looks like when it's loading.
         if (!snapshot.hasData) {
@@ -80,7 +84,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: const Icon(
+                icon: Icon(
                   Icons.arrow_back_rounded,
                   color: Colors.white,
                   size: 30.0,
@@ -98,11 +102,11 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                         ParamType.int,
                       ),
                       'qq': serializeParam(
-                        widget.qq,
+                        widget!.qq,
                         ParamType.DocumentReference,
                       ),
                       'ch': serializeParam(
-                        widget.ch,
+                        widget!.ch,
                         ParamType.DocumentReference,
                       ),
                     }.withoutNulls,
@@ -118,14 +122,14 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: true,
               elevation: 2.0,
             ),
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
@@ -149,7 +153,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 20.0, 20.0, 20.0, 20.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
@@ -193,7 +197,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                                     ),
                                     Text(
                                       valueOrDefault<String>(
-                                        widget.totalQuestions?.toString(),
+                                        widget!.totalQuestions?.toString(),
                                         '0',
                                       ),
                                       style: FlutterFlowTheme.of(context)
@@ -205,9 +209,9 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                                             letterSpacing: 0.0,
                                           ),
                                     ),
-                                  ].divide(const SizedBox(width: 16.0)),
+                                  ].divide(SizedBox(width: 16.0)),
                                 ),
-                              ].divide(const SizedBox(height: 16.0)),
+                              ].divide(SizedBox(height: 16.0)),
                             ),
                           ),
                         ),
@@ -216,7 +220,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                         stream: queryQuizRecord(
                           queryBuilder: (quizRecord) => quizRecord.where(
                             'quizset_Ref',
-                            isEqualTo: widget.qq,
+                            isEqualTo: widget!.qq,
                           ),
                         ),
                         builder: (context, snapshot) {
@@ -243,7 +247,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                             shrinkWrap: true,
                             scrollDirection: Axis.vertical,
                             itemCount: listViewQuizRecordList.length,
-                            separatorBuilder: (_, __) => const SizedBox(height: 24.0),
+                            separatorBuilder: (_, __) => SizedBox(height: 24.0),
                             itemBuilder: (context, listViewIndex) {
                               final listViewQuizRecord =
                                   listViewQuizRecordList[listViewIndex];
@@ -266,7 +270,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         20.0, 20.0, 20.0, 20.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
@@ -293,14 +297,14 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                                             color: listViewQuizRecord.stdAns ==
                                                     listViewQuizRecord
                                                         .correctAns
-                                                ? const Color(0xFFE8F5E9)
-                                                : const Color(0xFFF29D9D),
+                                                ? Color(0xFFE8F5E9)
+                                                : Color(0xFFF29D9D),
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 16.0, 16.0, 16.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.min,
@@ -327,11 +331,11 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         color:
-                                                            const Color(0xFF2E7D32),
+                                                            Color(0xFF2E7D32),
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ].divide(const SizedBox(height: 8.0)),
+                                              ].divide(SizedBox(height: 8.0)),
                                             ),
                                           ),
                                         ),
@@ -340,13 +344,13 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                                               MediaQuery.sizeOf(context).width *
                                                   1.0,
                                           decoration: BoxDecoration(
-                                            color: const Color(0xFFE8F5E9),
+                                            color: Color(0xFFE8F5E9),
                                             borderRadius:
                                                 BorderRadius.circular(8.0),
                                           ),
                                           child: Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 16.0, 16.0, 16.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.min,
@@ -373,15 +377,15 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                                                       .override(
                                                         fontFamily: 'Inter',
                                                         color:
-                                                            const Color(0xFF2E7D32),
+                                                            Color(0xFF2E7D32),
                                                         letterSpacing: 0.0,
                                                       ),
                                                 ),
-                                              ].divide(const SizedBox(height: 8.0)),
+                                              ].divide(SizedBox(height: 8.0)),
                                             ),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(height: 16.0)),
+                                      ].divide(SizedBox(height: 16.0)),
                                     ),
                                   ),
                                 ),
@@ -390,7 +394,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                           );
                         },
                       ),
-                    ].divide(const SizedBox(height: 24.0)),
+                    ].divide(SizedBox(height: 24.0)),
                   ),
                 ),
               ),

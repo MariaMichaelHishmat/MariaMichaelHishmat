@@ -6,6 +6,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'add_quiz_model.dart';
 export 'add_quiz_model.dart';
 
@@ -98,7 +100,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: const Icon(
+                icon: Icon(
                   Icons.arrow_back_rounded,
                   color: Colors.white,
                   size: 30.0,
@@ -124,14 +126,14 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: true,
               elevation: 0.0,
             ),
             body: SafeArea(
               top: true,
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                 child: SingleChildScrollView(
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
@@ -139,15 +141,15 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                       wrapWithModel(
                         model: _model.quesphotoModel,
                         updateCallback: () => safeSetState(() {}),
-                        child: const QuesphotoWidget(),
+                        child: QuesphotoWidget(),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             20.0, 24.0, 20.0, 0.0),
                         child: Material(
                           color: Colors.transparent,
                           elevation: 5.0,
-                          shape: const RoundedRectangleBorder(
+                          shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(12.0),
                               bottomRight: Radius.circular(12.0),
@@ -160,7 +162,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              borderRadius: const BorderRadius.only(
+                              borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(12.0),
                                 bottomRight: Radius.circular(12.0),
                                 topLeft: Radius.circular(12.0),
@@ -171,7 +173,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                 width: 3.0,
                               ),
                             ),
-                            child: SizedBox(
+                            child: Container(
                               width: 200.0,
                               child: TextFormField(
                                 controller: _model.textController1,
@@ -198,14 +200,14 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Color(0x00000000),
                                       width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   focusedBorder: OutlineInputBorder(
-                                    borderSide: const BorderSide(
+                                    borderSide: BorderSide(
                                       color: Color(0x00000000),
                                       width: 1.0,
                                     ),
@@ -246,13 +248,13 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             20.0, 24.0, 20.0, 0.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 12.0),
                               child: Container(
                                 width: double.infinity,
@@ -268,7 +270,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                       child: Material(
                                         color: Colors.transparent,
                                         elevation: 5.0,
-                                        shape: const RoundedRectangleBorder(
+                                        shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(8.0),
                                             bottomRight: Radius.circular(8.0),
@@ -281,7 +283,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(8.0),
                                               bottomRight: Radius.circular(8.0),
                                               topLeft: Radius.circular(8.0),
@@ -294,7 +296,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                               width: 3.0,
                                             ),
                                           ),
-                                          child: SizedBox(
+                                          child: Container(
                                             width: 200.0,
                                             child: TextFormField(
                                               controller:
@@ -328,7 +330,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                                         ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1.0,
                                                   ),
@@ -338,7 +340,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1.0,
                                                   ),
@@ -392,7 +394,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 0.0, 0.0),
                                       child: Material(
                                         color: Colors.transparent,
@@ -480,7 +482,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 12.0),
                               child: Container(
                                 width: double.infinity,
@@ -496,7 +498,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                       child: Material(
                                         color: Colors.transparent,
                                         elevation: 5.0,
-                                        shape: const RoundedRectangleBorder(
+                                        shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(8.0),
                                             bottomRight: Radius.circular(8.0),
@@ -509,7 +511,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(8.0),
                                               bottomRight: Radius.circular(8.0),
                                               topLeft: Radius.circular(8.0),
@@ -522,7 +524,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                               width: 3.0,
                                             ),
                                           ),
-                                          child: SizedBox(
+                                          child: Container(
                                             width: 200.0,
                                             child: TextFormField(
                                               controller:
@@ -556,7 +558,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                                         ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1.0,
                                                   ),
@@ -566,7 +568,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1.0,
                                                   ),
@@ -620,7 +622,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 0.0, 0.0),
                                       child: Material(
                                         color: Colors.transparent,
@@ -708,7 +710,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 12.0),
                               child: Container(
                                 width: double.infinity,
@@ -724,7 +726,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                       child: Material(
                                         color: Colors.transparent,
                                         elevation: 5.0,
-                                        shape: const RoundedRectangleBorder(
+                                        shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(8.0),
                                             bottomRight: Radius.circular(8.0),
@@ -737,7 +739,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(8.0),
                                               bottomRight: Radius.circular(8.0),
                                               topLeft: Radius.circular(8.0),
@@ -750,7 +752,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                               width: 3.0,
                                             ),
                                           ),
-                                          child: SizedBox(
+                                          child: Container(
                                             width: 200.0,
                                             child: TextFormField(
                                               controller:
@@ -784,7 +786,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                                         ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1.0,
                                                   ),
@@ -794,7 +796,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1.0,
                                                   ),
@@ -848,7 +850,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 0.0, 0.0),
                                       child: Material(
                                         color: Colors.transparent,
@@ -936,7 +938,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 12.0),
                               child: Container(
                                 width: double.infinity,
@@ -952,7 +954,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                       child: Material(
                                         color: Colors.transparent,
                                         elevation: 5.0,
-                                        shape: const RoundedRectangleBorder(
+                                        shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.only(
                                             bottomLeft: Radius.circular(8.0),
                                             bottomRight: Radius.circular(8.0),
@@ -965,7 +967,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                           decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .info,
-                                            borderRadius: const BorderRadius.only(
+                                            borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(8.0),
                                               bottomRight: Radius.circular(8.0),
                                               topLeft: Radius.circular(8.0),
@@ -978,7 +980,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                               width: 3.0,
                                             ),
                                           ),
-                                          child: SizedBox(
+                                          child: Container(
                                             width: 200.0,
                                             child: TextFormField(
                                               controller:
@@ -1012,7 +1014,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                                         ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1.0,
                                                   ),
@@ -1022,7 +1024,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                                 ),
                                                 focusedBorder:
                                                     OutlineInputBorder(
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Color(0x00000000),
                                                     width: 1.0,
                                                   ),
@@ -1076,7 +1078,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 0.0, 0.0, 0.0),
                                       child: Material(
                                         color: Colors.transparent,
@@ -1164,7 +1166,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   20.0, 12.0, 20.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
@@ -1180,7 +1182,7 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                     opt3bo: _model.checkboxValue3,
                                     opt4: _model.textController5.text,
                                     opt4bo: _model.checkboxValue4,
-                                    id: widget.qsid,
+                                    id: widget!.qsid,
                                     correctAns: () {
                                       if (_model.checkboxValue1 == true) {
                                         return _model.textController2.text;
@@ -1213,9 +1215,9 @@ class _AddQuizWidgetState extends State<AddQuizWidget> {
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 60.0,
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       16.0, 0.0, 16.0, 0.0),
-                                  iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)

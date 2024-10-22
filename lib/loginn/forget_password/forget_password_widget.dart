@@ -3,6 +3,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'forget_password_model.dart';
 export 'forget_password_model.dart';
 
@@ -51,7 +53,7 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -69,20 +71,20 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 0.0),
                   child: Material(
                     color: Colors.transparent,
                     elevation: 5.0,
@@ -101,7 +103,7 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
                         ),
                       ),
                       child: Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Text(
                           'Reset Your Password',
                           style: FlutterFlowTheme.of(context)
@@ -119,12 +121,12 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
                 ),
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(24.0, 48.0, 24.0, 0.0),
+                      EdgeInsetsDirectional.fromSTEB(24.0, 48.0, 24.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
-                        child: SizedBox(
+                        child: Container(
                           width: 150.0,
                           child: TextFormField(
                             controller: _model.textController,
@@ -193,7 +195,7 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () {
                       print('Button pressed ...');
@@ -202,9 +204,9 @@ class _ForgetPasswordWidgetState extends State<ForgetPasswordWidget> {
                     options: FFButtonOptions(
                       height: 40.0,
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                       iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(

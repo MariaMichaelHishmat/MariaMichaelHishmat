@@ -4,7 +4,10 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'opentopic_model.dart';
 export 'opentopic_model.dart';
 
@@ -86,7 +89,7 @@ class _OpentopicWidgetState extends State<OpentopicWidget> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 50.0, 0.0, 24.0),
                           child: Text(
                             'Open Topic',
@@ -102,7 +105,7 @@ class _OpentopicWidgetState extends State<OpentopicWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
                           child: StreamBuilder<List<TopicsRecord>>(
                             stream: queryTopicsRecord(),
@@ -160,7 +163,7 @@ class _OpentopicWidgetState extends State<OpentopicWidget> {
                                     FlutterFlowTheme.of(context).primary,
                                 borderWidth: 3.0,
                                 borderRadius: 8.0,
-                                margin: const EdgeInsetsDirectional.fromSTEB(
+                                margin: EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 12.0, 0.0),
                                 hidesUnderline: true,
                                 isOverButton: false,
@@ -174,7 +177,7 @@ class _OpentopicWidgetState extends State<OpentopicWidget> {
                           onPressed: () async {
                             await columnTopicsOfUserRecord!.reference
                                 .update(createTopicsOfUserRecordData(
-                              userRef: widget.user,
+                              userRef: widget!.user,
                               topic: _model.dropDownValue,
                             ));
                             context.pop();
@@ -182,9 +185,9 @@ class _OpentopicWidgetState extends State<OpentopicWidget> {
                           text: 'Open Topic',
                           options: FFButtonOptions(
                             height: 40.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -198,12 +201,12 @@ class _OpentopicWidgetState extends State<OpentopicWidget> {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                         ),
-                      ].divide(const SizedBox(height: 50.0)),
+                      ].divide(SizedBox(height: 50.0)),
                     ),
                   );
                 },
               ),
-            ].divide(const SizedBox(height: 100.0)).around(const SizedBox(height: 100.0)),
+            ].divide(SizedBox(height: 100.0)).around(SizedBox(height: 100.0)),
           ),
         ),
       ),

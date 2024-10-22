@@ -1,7 +1,10 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'userrr_model.dart';
 export 'userrr_model.dart';
 
@@ -52,7 +55,7 @@ class _UserrrWidgetState extends State<UserrrWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -70,14 +73,14 @@ class _UserrrWidgetState extends State<UserrrWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(12.0, 24.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(12.0, 24.0, 0.0, 0.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -85,7 +88,7 @@ class _UserrrWidgetState extends State<UserrrWidget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 24.0, 16.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 24.0, 16.0),
                     child: Material(
                       color: Colors.transparent,
                       elevation: 5.0,
@@ -105,7 +108,7 @@ class _UserrrWidgetState extends State<UserrrWidget> {
                           ),
                         ),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 24.0, 24.0, 24.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
@@ -152,7 +155,7 @@ class _UserrrWidgetState extends State<UserrrWidget> {
                                       fontWeight: FontWeight.w600,
                                     ),
                               ),
-                            ].divide(const SizedBox(height: 16.0)),
+                            ].divide(SizedBox(height: 16.0)),
                           ),
                         ),
                       ),
@@ -175,7 +178,7 @@ class _UserrrWidgetState extends State<UserrrWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             20.0, 20.0, 20.0, 20.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -323,7 +326,7 @@ class _UserrrWidgetState extends State<UserrrWidget> {
                                 ),
                               ],
                             ),
-                          ].divide(const SizedBox(height: 16.0)),
+                          ].divide(SizedBox(height: 16.0)),
                         ),
                       ),
                     ),
@@ -345,7 +348,7 @@ class _UserrrWidgetState extends State<UserrrWidget> {
                         ),
                       ),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             20.0, 20.0, 20.0, 20.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -375,7 +378,7 @@ class _UserrrWidgetState extends State<UserrrWidget> {
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 12.0, 12.0, 12.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -407,7 +410,7 @@ class _UserrrWidgetState extends State<UserrrWidget> {
                                     ),
                                   ),
                                 ),
-                              ].divide(const SizedBox(height: 12.0)),
+                              ].divide(SizedBox(height: 12.0)),
                             ),
                             Row(
                               mainAxisSize: MainAxisSize.max,
@@ -435,12 +438,12 @@ class _UserrrWidgetState extends State<UserrrWidget> {
                                 ),
                               ],
                             ),
-                          ].divide(const SizedBox(height: 16.0)),
+                          ].divide(SizedBox(height: 16.0)),
                         ),
                       ),
                     ),
                   ),
-                ].divide(const SizedBox(height: 24.0)),
+                ].divide(SizedBox(height: 24.0)),
               ),
             ),
           ),

@@ -1,7 +1,10 @@
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'ques_model.dart';
 export 'ques_model.dart';
 
@@ -66,12 +69,12 @@ class _QuesWidgetState extends State<QuesWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+      padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).info,
-          boxShadow: const [
+          boxShadow: [
             BoxShadow(
               blurRadius: 4.0,
               color: Color(0x33000000),
@@ -89,7 +92,7 @@ class _QuesWidgetState extends State<QuesWidget> {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: EdgeInsets.all(16.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -113,7 +116,7 @@ class _QuesWidgetState extends State<QuesWidget> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(12.0),
                     child: Image.network(
-                      widget.img!,
+                      widget!.img!,
                       width: 200.0,
                       height: 200.0,
                       fit: BoxFit.fill,
@@ -123,7 +126,7 @@ class _QuesWidgetState extends State<QuesWidget> {
               ),
               Text(
                 valueOrDefault<String>(
-                  widget.qn,
+                  widget!.qn,
                   'n',
                 ),
                 style: FlutterFlowTheme.of(context).headlineSmall.override(
@@ -153,10 +156,10 @@ class _QuesWidgetState extends State<QuesWidget> {
                             ),
                             TextSpan(
                               text: valueOrDefault<String>(
-                                widget.opt1,
+                                widget!.opt1,
                                 'q',
                               ),
-                              style: const TextStyle(),
+                              style: TextStyle(),
                             )
                           ],
                           style:
@@ -206,7 +209,7 @@ class _QuesWidgetState extends State<QuesWidget> {
                           ),
                         ),
                       ),
-                    ].divide(const SizedBox(width: 8.0)),
+                    ].divide(SizedBox(width: 8.0)),
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
@@ -227,10 +230,10 @@ class _QuesWidgetState extends State<QuesWidget> {
                             ),
                             TextSpan(
                               text: valueOrDefault<String>(
-                                widget.opt2,
+                                widget!.opt2,
                                 'q',
                               ),
-                              style: const TextStyle(),
+                              style: TextStyle(),
                             )
                           ],
                           style:
@@ -279,7 +282,7 @@ class _QuesWidgetState extends State<QuesWidget> {
                           ),
                         ),
                       ),
-                    ].divide(const SizedBox(width: 8.0)),
+                    ].divide(SizedBox(width: 8.0)),
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
@@ -300,10 +303,10 @@ class _QuesWidgetState extends State<QuesWidget> {
                             ),
                             TextSpan(
                               text: valueOrDefault<String>(
-                                widget.opt3,
+                                widget!.opt3,
                                 'q',
                               ),
-                              style: const TextStyle(),
+                              style: TextStyle(),
                             )
                           ],
                           style:
@@ -352,7 +355,7 @@ class _QuesWidgetState extends State<QuesWidget> {
                           ),
                         ),
                       ),
-                    ].divide(const SizedBox(width: 8.0)),
+                    ].divide(SizedBox(width: 8.0)),
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
@@ -373,10 +376,10 @@ class _QuesWidgetState extends State<QuesWidget> {
                             ),
                             TextSpan(
                               text: valueOrDefault<String>(
-                                widget.opt4,
+                                widget!.opt4,
                                 'q',
                               ),
-                              style: const TextStyle(),
+                              style: TextStyle(),
                             )
                           ],
                           style:
@@ -425,11 +428,11 @@ class _QuesWidgetState extends State<QuesWidget> {
                           ),
                         ),
                       ),
-                    ].divide(const SizedBox(width: 8.0)),
+                    ].divide(SizedBox(width: 8.0)),
                   ),
-                ].divide(const SizedBox(height: 12.0)),
+                ].divide(SizedBox(height: 12.0)),
               ),
-            ].divide(const SizedBox(height: 16.0)),
+            ].divide(SizedBox(height: 16.0)),
           ),
         ),
       ),

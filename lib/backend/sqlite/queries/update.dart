@@ -7,7 +7,7 @@ Future performAddChapter(
   String? img,
 }) {
   final query = '''
-INSERT  INTO Chapter(name,img) VALUES ('$name','$img');
+INSERT  INTO Chapter(name,img) VALUES ('${name}','${img}');
 ''';
   return database.rawQuery(query);
 }
@@ -24,9 +24,9 @@ Future performUpdateChapter(
   final query = '''
 UPDATE Chapter
 SET
-name='$name',
-img='$img',
-WHERE id='$id'
+name='${name}',
+img='${img}',
+WHERE id='${id}'
 ''';
   return database.rawQuery(query);
 }
@@ -39,7 +39,7 @@ Future performDeleteChapter(
   int? id,
 }) {
   final query = '''
-DELETE FROM Chapter WHERE id='$id'
+DELETE FROM Chapter WHERE id='${id}'
 ''';
   return database.rawQuery(query);
 }
@@ -53,7 +53,7 @@ Future performAddUser(
   String? password,
 }) {
   final query = '''
-INSERT  INTO userr(username,password) VALUES ('$name','$password');
+INSERT  INTO userr(username,password) VALUES ('${name}','${password}');
 ''';
   return database.rawQuery(query);
 }
@@ -68,7 +68,7 @@ Future performAddQuizset(
   int? quizsetId,
 }) {
   final query = '''
-INSERT  INTO QuizSet(name,duration,quizset_id) VALUES ('$name','$duration','$quizsetId');
+INSERT  INTO QuizSet(name,duration,quizset_id) VALUES ('${name}','${duration}','${quizsetId}');
 ''';
   return database.rawQuery(query);
 }
@@ -82,7 +82,7 @@ Future performAddQuestion(
   String? studentAns,
 }) {
   final query = '''
-INSERT  INTO Questions(Question,StudentAns) VALUES ('$question','$studentAns');
+INSERT  INTO Questions(Question,StudentAns) VALUES ('${question}','${studentAns}');
 ''';
   return database.rawQuery(query);
 }
@@ -106,7 +106,7 @@ Future performAddQuiz(
   int? id,
 }) {
   final query = '''
-INSERT  INTO quiz(question,img,OPT1,OPT1bo,OPT2,OPT2bo,OPT3,OPT3bo,OPT4,OPT4bo,CorrectAns) WHERE id='$id' VALUES ('$question','$img','$opt1','$opt1bo','$opt2','$opt2bo','$opt3','$opt3bo','$opt4','$opt4bo','$correctAns');
+INSERT  INTO quiz(question,img,OPT1,OPT1bo,OPT2,OPT2bo,OPT3,OPT3bo,OPT4,OPT4bo,CorrectAns) WHERE id='${id}' VALUES ('${question}','${img}','${opt1}','${opt1bo}','${opt2}','${opt2bo}','${opt3}','${opt3bo}','${opt4}','${opt4bo}','${correctAns}');
 
 ''';
   return database.rawQuery(query);
@@ -129,7 +129,7 @@ Future performAddTopic(
   int? id,
 }) {
   final query = '''
-INSERT  INTO topics(name,img,vid1n,vid1,vid2n,vid2,vid3n,vid3,date) WHERE topic_id='$id' VALUES ('$name','$img','$vid1n','$vid1','$vid2n','$vid2','$vid3n','$vid3','$date');
+INSERT  INTO topics(name,img,vid1n,vid1,vid2n,vid2,vid3n,vid3,date) WHERE topic_id='${id}' VALUES ('${name}','${img}','${vid1n}','${vid1}','${vid2n}','${vid2}','${vid3n}','${vid3}','${date}');
 ''';
   return database.rawQuery(query);
 }
@@ -145,8 +145,8 @@ Future performUpdateQuestion(
   final query = '''
 UPDATE Questions
 SET
-StudentAns='$studentAns',
-WHERE question_id='$id'
+StudentAns='${studentAns}',
+WHERE question_id='${id}'
 ''';
   return database.rawQuery(query);
 }
@@ -162,8 +162,8 @@ Future performUpdateQuizset(
   final query = '''
 UPDATE QuizSet
 SET
-Total Questions='$totalQuestions',
-WHERE quizset_id='$id'
+Total Questions='${totalQuestions}',
+WHERE quizset_id='${id}'
 ''';
   return database.rawQuery(query);
 }
@@ -179,8 +179,8 @@ Future performUpdateTopicsOfUser(
   final query = '''
 UPDATE TopicsOfUser
 SET
-topic Name='$topicName',
-WHERE topicsofuser='$id'
+topic Name='${topicName}',
+WHERE topicsofuser='${id}'
 ''';
   return database.rawQuery(query);
 }

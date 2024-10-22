@@ -6,8 +6,11 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/instant_timer.dart';
 import 'package:stop_watch_timer/stop_watch_timer.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'qui_model.dart';
 export 'qui_model.dart';
 
@@ -40,7 +43,7 @@ class _QuiWidgetState extends State<QuiWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.instantTimer = InstantTimer.periodic(
-        duration: const Duration(milliseconds: 1),
+        duration: Duration(milliseconds: 1),
         callback: (timer) async {
           _model.timerController.onStartTimer();
         },
@@ -70,7 +73,7 @@ class _QuiWidgetState extends State<QuiWidget> {
           child: Stack(
             children: [
               StreamBuilder<QuizsetRecord>(
-                stream: QuizsetRecord.getDocument(widget.qq!),
+                stream: QuizsetRecord.getDocument(widget!.qq!),
                 builder: (context, snapshot) {
                   // Customize what your widget looks like when it's loading.
                   if (!snapshot.hasData) {
@@ -95,7 +98,7 @@ class _QuiWidgetState extends State<QuiWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         StreamBuilder<TopicsRecord>(
-                          stream: TopicsRecord.getDocument(widget.tt!),
+                          stream: TopicsRecord.getDocument(widget!.tt!),
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.
                             if (!snapshot.hasData) {
@@ -120,7 +123,7 @@ class _QuiWidgetState extends State<QuiWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 0.0, 12.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
@@ -129,7 +132,7 @@ class _QuiWidgetState extends State<QuiWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 0.0, 24.0),
                                           child:
                                               FutureBuilder<List<QuizRecord>>(
@@ -137,7 +140,7 @@ class _QuiWidgetState extends State<QuiWidget> {
                                               queryBuilder: (quizRecord) =>
                                                   quizRecord.where(
                                                 'quizset_Ref',
-                                                isEqualTo: widget.qq,
+                                                isEqualTo: widget!.qq,
                                               ),
                                             ),
                                             builder: (context, snapshot) {
@@ -179,7 +182,7 @@ class _QuiWidgetState extends State<QuiWidget> {
                                                           listViewIndex];
                                                   return Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 24.0,
                                                                 0.0, 0.0),
                                                     child: QuesWidget(
@@ -225,7 +228,7 @@ class _QuiWidgetState extends State<QuiWidget> {
                                                   ParamType.int,
                                                 ),
                                                 'qq': serializeParam(
-                                                  widget.qq,
+                                                  widget!.qq,
                                                   ParamType.DocumentReference,
                                                 ),
                                                 'ch': serializeParam(
@@ -251,10 +254,10 @@ class _QuiWidgetState extends State<QuiWidget> {
                                             width: double.infinity,
                                             height: 40.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 0.0, 16.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
@@ -271,7 +274,7 @@ class _QuiWidgetState extends State<QuiWidget> {
                                                 BorderRadius.circular(22.0),
                                           ),
                                         ),
-                                      ].divide(const SizedBox(height: 20.0)),
+                                      ].divide(SizedBox(height: 20.0)),
                                     ),
                                   ),
                                 ],
@@ -280,14 +283,14 @@ class _QuiWidgetState extends State<QuiWidget> {
                           },
                         ),
                       ]
-                          .divide(const SizedBox(height: 50.0))
-                          .around(const SizedBox(height: 50.0)),
+                          .divide(SizedBox(height: 50.0))
+                          .around(SizedBox(height: 50.0)),
                     ),
                   );
                 },
               ),
               Align(
-                alignment: const AlignmentDirectional(0.0, -0.99),
+                alignment: AlignmentDirectional(0.0, -0.99),
                 child: SingleChildScrollView(
                   primary: false,
                   child: Column(
@@ -297,14 +300,14 @@ class _QuiWidgetState extends State<QuiWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 0.0, 12.0, 24.0),
                             child: StreamBuilder<List<QuizsetRecord>>(
                               stream: queryQuizsetRecord(
                                 queryBuilder: (quizsetRecord) =>
                                     quizsetRecord.where(
                                   'topic_ref',
-                                  isEqualTo: widget.tt,
+                                  isEqualTo: widget!.tt,
                                 ),
                                 singleRecord: true,
                               ),
@@ -352,11 +355,11 @@ class _QuiWidgetState extends State<QuiWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 10.0),
                                       child: StreamBuilder<TopicsRecord>(
                                         stream: TopicsRecord.getDocument(
-                                            widget.tt!),
+                                            widget!.tt!),
                                         builder: (context, snapshot) {
                                           // Customize what your widget looks like when it's loading.
                                           if (!snapshot.hasData) {
@@ -386,7 +389,7 @@ class _QuiWidgetState extends State<QuiWidget> {
                                                 MainAxisAlignment.center,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         12.0, 0.0, 0.0, 0.0),
                                                 child: Icon(
@@ -398,7 +401,7 @@ class _QuiWidgetState extends State<QuiWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 0.0, 12.0, 0.0),
                                                 child: FlutterFlowTimer(
@@ -415,7 +418,7 @@ class _QuiWidgetState extends State<QuiWidget> {
                                                   ),
                                                   controller:
                                                       _model.timerController,
-                                                  updateStateInterval: const Duration(
+                                                  updateStateInterval: Duration(
                                                       milliseconds: 1000),
                                                   onChanged: (value,
                                                       displayTime,
@@ -424,9 +427,8 @@ class _QuiWidgetState extends State<QuiWidget> {
                                                         value;
                                                     _model.timerValue =
                                                         displayTime;
-                                                    if (shouldUpdate) {
+                                                    if (shouldUpdate)
                                                       safeSetState(() {});
-                                                    }
                                                   },
                                                   onEnded: () async {
                                                     context.pushNamed(
@@ -435,11 +437,11 @@ class _QuiWidgetState extends State<QuiWidget> {
                                                         'totalQuestions':
                                                             serializeParam(
                                                           containerQuizsetRecord
-                                                              .totalQuestions,
+                                                              ?.totalQuestions,
                                                           ParamType.int,
                                                         ),
                                                         'qq': serializeParam(
-                                                          widget.qq,
+                                                          widget!.qq,
                                                           ParamType
                                                               .DocumentReference,
                                                         ),

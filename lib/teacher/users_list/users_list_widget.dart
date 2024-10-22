@@ -4,7 +4,10 @@ import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'users_list_model.dart';
 export 'users_list_model.dart';
 
@@ -74,7 +77,7 @@ class _UsersListWidgetState extends State<UsersListWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: const Icon(
+                icon: Icon(
                   Icons.arrow_back_rounded,
                   color: Colors.white,
                   size: 30.0,
@@ -92,7 +95,7 @@ class _UsersListWidgetState extends State<UsersListWidget> {
                       letterSpacing: 0.0,
                     ),
               ),
-              actions: const [],
+              actions: [],
               centerTitle: true,
               elevation: 2.0,
             ),
@@ -103,7 +106,7 @@ class _UsersListWidgetState extends State<UsersListWidget> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
+                      padding: EdgeInsetsDirectional.fromSTEB(
                           16.0, 16.0, 16.0, 16.0),
                       child: FutureBuilder<List<UserListRow>>(
                         future: SQLiteManager.instance.userList(),
@@ -142,7 +145,7 @@ class _UsersListWidgetState extends State<UsersListWidget> {
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(12.0),
+                                padding: EdgeInsets.all(12.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -168,14 +171,14 @@ class _UsersListWidgetState extends State<UsersListWidget> {
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(12.0),
+                                            padding: EdgeInsets.all(12.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
                                                   MainAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(12.0, 0.0, 12.0,
                                                           12.0),
                                                   child: Icon(
@@ -189,7 +192,7 @@ class _UsersListWidgetState extends State<UsersListWidget> {
                                                 Expanded(
                                                   child: Autocomplete<String>(
                                                     initialValue:
-                                                        const TextEditingValue(),
+                                                        TextEditingValue(),
                                                     optionsBuilder:
                                                         (textEditingValue) {
                                                       if (textEditingValue
@@ -232,7 +235,7 @@ class _UsersListWidgetState extends State<UsersListWidget> {
                                                                       0.0,
                                                                 ),
                                                         textHighlightStyle:
-                                                            const TextStyle(),
+                                                            TextStyle(),
                                                         elevation: 4.0,
                                                         optionBackgroundColor:
                                                             FlutterFlowTheme.of(
@@ -322,13 +325,13 @@ class _UsersListWidgetState extends State<UsersListWidget> {
                                                     },
                                                   ),
                                                 ),
-                                              ].divide(const SizedBox(width: 12.0)),
+                                              ].divide(SizedBox(width: 12.0)),
                                             ),
                                           ),
                                         ),
                                       ),
                                     ),
-                                  ].divide(const SizedBox(width: 16.0)),
+                                  ].divide(SizedBox(width: 16.0)),
                                 ),
                               ),
                             ),
@@ -338,7 +341,7 @@ class _UsersListWidgetState extends State<UsersListWidget> {
                     ),
                     if (!_model.searchactive)
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: FutureBuilder<List<UserListRow>>(
                           future: SQLiteManager.instance.userList(),
@@ -366,7 +369,7 @@ class _UsersListWidgetState extends State<UsersListWidget> {
                               scrollDirection: Axis.vertical,
                               itemCount: listViewUserListRowList.length,
                               separatorBuilder: (_, __) =>
-                                  const SizedBox(height: 16.0),
+                                  SizedBox(height: 16.0),
                               itemBuilder: (context, listViewIndex) {
                                 final listViewUserListRow =
                                     listViewUserListRowList[listViewIndex];
@@ -390,7 +393,7 @@ class _UsersListWidgetState extends State<UsersListWidget> {
                                       ),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           16.0, 16.0, 16.0, 16.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
@@ -463,7 +466,7 @@ class _UsersListWidgetState extends State<UsersListWidget> {
                                                   ),
                                                 ],
                                               ),
-                                            ].divide(const SizedBox(width: 16.0)),
+                                            ].divide(SizedBox(width: 16.0)),
                                           ),
                                           Icon(
                                             Icons.chevron_right,
@@ -471,7 +474,7 @@ class _UsersListWidgetState extends State<UsersListWidget> {
                                                 .secondary,
                                             size: 24.0,
                                           ),
-                                        ].divide(const SizedBox(width: 16.0)),
+                                        ].divide(SizedBox(width: 16.0)),
                                       ),
                                     ),
                                   ),
@@ -483,7 +486,7 @@ class _UsersListWidgetState extends State<UsersListWidget> {
                       ),
                     if (_model.searchactive)
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 0.0, 16.0, 0.0),
                         child: ListView(
                           padding: EdgeInsets.zero,
@@ -526,7 +529,7 @@ class _UsersListWidgetState extends State<UsersListWidget> {
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 16.0, 16.0, 16.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
@@ -592,7 +595,7 @@ class _UsersListWidgetState extends State<UsersListWidget> {
                                                 ),
                                               ],
                                             ),
-                                          ].divide(const SizedBox(width: 16.0)),
+                                          ].divide(SizedBox(width: 16.0)),
                                         ),
                                         Icon(
                                           Icons.chevron_right,
@@ -600,16 +603,16 @@ class _UsersListWidgetState extends State<UsersListWidget> {
                                               .secondary,
                                           size: 24.0,
                                         ),
-                                      ].divide(const SizedBox(width: 16.0)),
+                                      ].divide(SizedBox(width: 16.0)),
                                     ),
                                   ),
                                 ),
                               ),
                             ),
-                          ].divide(const SizedBox(height: 16.0)),
+                          ].divide(SizedBox(height: 16.0)),
                         ),
                       ),
-                  ].divide(const SizedBox(height: 24.0)),
+                  ].divide(SizedBox(height: 24.0)),
                 ),
               ),
             ),

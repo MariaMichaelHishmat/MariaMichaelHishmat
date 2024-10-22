@@ -1,7 +1,10 @@
 import '/backend/sqlite/sqlite_manager.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'teacher_home_model.dart';
 export 'teacher_home_model.dart';
 
@@ -42,14 +45,14 @@ class _TeacherHomeWidgetState extends State<TeacherHomeWidget> {
         drawer: Drawer(
           elevation: 16.0,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 102.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 102.0, 0.0, 0.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -150,7 +153,7 @@ class _TeacherHomeWidgetState extends State<TeacherHomeWidget> {
                       ),
                     ],
                   ),
-                ].divide(const SizedBox(height: 20.0)),
+                ].divide(SizedBox(height: 20.0)),
               ),
             ),
           ),
@@ -178,14 +181,14 @@ class _TeacherHomeWidgetState extends State<TeacherHomeWidget> {
               ),
             ],
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 1.0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsets.all(10.0),
+            padding: EdgeInsets.all(10.0),
             child: SingleChildScrollView(
               primary: false,
               child: Column(
@@ -197,7 +200,7 @@ class _TeacherHomeWidgetState extends State<TeacherHomeWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 50.0, 0.0, 40.0),
                         child: Text(
                           'Your Courses :       ',
@@ -211,7 +214,7 @@ class _TeacherHomeWidgetState extends State<TeacherHomeWidget> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             160.0, 50.0, 0.0, 0.0),
                         child: InkWell(
                           splashColor: Colors.transparent,
@@ -289,7 +292,7 @@ class _TeacherHomeWidgetState extends State<TeacherHomeWidget> {
                                     child: Stack(
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsets.all(10.0),
+                                          padding: EdgeInsets.all(10.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             crossAxisAlignment:
@@ -318,7 +321,7 @@ class _TeacherHomeWidgetState extends State<TeacherHomeWidget> {
                                                   ),
                                                   child: ClipRRect(
                                                     borderRadius:
-                                                        const BorderRadius.only(
+                                                        BorderRadius.only(
                                                       bottomLeft:
                                                           Radius.circular(10.0),
                                                       bottomRight:
@@ -343,7 +346,7 @@ class _TeacherHomeWidgetState extends State<TeacherHomeWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   100.0, 0.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -377,14 +380,14 @@ class _TeacherHomeWidgetState extends State<TeacherHomeWidget> {
                                               Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  const Icon(
+                                                  Icon(
                                                     Icons.circle,
                                                     color: Color(0xFF39AB21),
                                                     size: 24.0,
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(10.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -411,19 +414,19 @@ class _TeacherHomeWidgetState extends State<TeacherHomeWidget> {
                                 ),
                               ],
                             );
-                          }).divide(const SizedBox(height: 12.0)),
+                          }).divide(SizedBox(height: 12.0)),
                         ),
                       );
                     },
                   ),
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 40.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 50.0, 0.0, 0.0),
                           child: Text(
                             'users :                       ',
@@ -437,7 +440,7 @@ class _TeacherHomeWidgetState extends State<TeacherHomeWidget> {
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               160.0, 50.0, 0.0, 0.0),
                           child: InkWell(
                             splashColor: Colors.transparent,
@@ -512,12 +515,12 @@ class _TeacherHomeWidgetState extends State<TeacherHomeWidget> {
                                         width: 3.0,
                                       ),
                                     ),
-                                    child: SizedBox(
+                                    child: Container(
                                       width: double.infinity,
                                       child: Stack(
                                         children: [
                                           Padding(
-                                            padding: const EdgeInsets.all(10.0),
+                                            padding: EdgeInsets.all(10.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
@@ -562,7 +565,7 @@ class _TeacherHomeWidgetState extends State<TeacherHomeWidget> {
                                           ),
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     100.0, 0.0, 0.0, 0.0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
@@ -602,7 +605,7 @@ class _TeacherHomeWidgetState extends State<TeacherHomeWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -640,12 +643,12 @@ class _TeacherHomeWidgetState extends State<TeacherHomeWidget> {
                                 ),
                               ],
                             );
-                          }).divide(const SizedBox(width: 12.0)),
+                          }).divide(SizedBox(width: 12.0)),
                         ),
                       );
                     },
                   ),
-                ].divide(const SizedBox(height: 20.0)),
+                ].divide(SizedBox(height: 20.0)),
               ),
             ),
           ),

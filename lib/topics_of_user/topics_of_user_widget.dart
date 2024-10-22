@@ -2,6 +2,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'topics_of_user_model.dart';
 export 'topics_of_user_model.dart';
 
@@ -42,14 +44,14 @@ class _TopicsOfUserWidgetState extends State<TopicsOfUserWidget> {
         appBar: AppBar(
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 0.0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+            padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -68,7 +70,7 @@ class _TopicsOfUserWidgetState extends State<TopicsOfUserWidget> {
                         borderRadius: BorderRadius.circular(16.0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             16.0, 16.0, 16.0, 16.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -96,7 +98,7 @@ class _TopicsOfUserWidgetState extends State<TopicsOfUserWidget> {
                                     letterSpacing: 0.0,
                                   ),
                             ),
-                          ].divide(const SizedBox(height: 16.0)),
+                          ].divide(SizedBox(height: 16.0)),
                         ),
                       ),
                     ),
@@ -121,7 +123,7 @@ class _TopicsOfUserWidgetState extends State<TopicsOfUserWidget> {
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 16.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -178,7 +180,7 @@ class _TopicsOfUserWidgetState extends State<TopicsOfUserWidget> {
                                         ),
                                       ],
                                     ),
-                                  ].divide(const SizedBox(width: 16.0)),
+                                  ].divide(SizedBox(width: 16.0)),
                                 ),
                                 Container(
                                   width: 60.0,
@@ -188,7 +190,7 @@ class _TopicsOfUserWidgetState extends State<TopicsOfUserWidget> {
                                     borderRadius: BorderRadius.circular(15.0),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         4.0, 8.0, 4.0, 8.0),
                                     child: Text(
                                       'Active',
@@ -223,7 +225,7 @@ class _TopicsOfUserWidgetState extends State<TopicsOfUserWidget> {
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 16.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -280,7 +282,7 @@ class _TopicsOfUserWidgetState extends State<TopicsOfUserWidget> {
                                         ),
                                       ],
                                     ),
-                                  ].divide(const SizedBox(width: 16.0)),
+                                  ].divide(SizedBox(width: 16.0)),
                                 ),
                                 Container(
                                   width: 60.0,
@@ -290,7 +292,7 @@ class _TopicsOfUserWidgetState extends State<TopicsOfUserWidget> {
                                     borderRadius: BorderRadius.circular(15.0),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         4.0, 8.0, 4.0, 8.0),
                                     child: Text(
                                       'Active',
@@ -325,7 +327,7 @@ class _TopicsOfUserWidgetState extends State<TopicsOfUserWidget> {
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 16.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -382,7 +384,7 @@ class _TopicsOfUserWidgetState extends State<TopicsOfUserWidget> {
                                         ),
                                       ],
                                     ),
-                                  ].divide(const SizedBox(width: 16.0)),
+                                  ].divide(SizedBox(width: 16.0)),
                                 ),
                                 Container(
                                   width: 60.0,
@@ -392,7 +394,7 @@ class _TopicsOfUserWidgetState extends State<TopicsOfUserWidget> {
                                     borderRadius: BorderRadius.circular(15.0),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         4.0, 8.0, 4.0, 8.0),
                                     child: Text(
                                       'Active',
@@ -427,7 +429,7 @@ class _TopicsOfUserWidgetState extends State<TopicsOfUserWidget> {
                             borderRadius: BorderRadius.circular(12.0),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 16.0, 16.0, 16.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -484,7 +486,7 @@ class _TopicsOfUserWidgetState extends State<TopicsOfUserWidget> {
                                         ),
                                       ],
                                     ),
-                                  ].divide(const SizedBox(width: 16.0)),
+                                  ].divide(SizedBox(width: 16.0)),
                                 ),
                                 Container(
                                   width: 60.0,
@@ -494,7 +496,7 @@ class _TopicsOfUserWidgetState extends State<TopicsOfUserWidget> {
                                     borderRadius: BorderRadius.circular(15.0),
                                   ),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         4.0, 8.0, 4.0, 8.0),
                                     child: Text(
                                       'Active',
@@ -515,7 +517,7 @@ class _TopicsOfUserWidgetState extends State<TopicsOfUserWidget> {
                           ),
                         ),
                       ),
-                    ].divide(const SizedBox(height: 12.0)),
+                    ].divide(SizedBox(height: 12.0)),
                   ),
                   FFButtonWidget(
                     onPressed: () {
@@ -526,9 +528,9 @@ class _TopicsOfUserWidgetState extends State<TopicsOfUserWidget> {
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 50.0,
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
@@ -540,7 +542,7 @@ class _TopicsOfUserWidgetState extends State<TopicsOfUserWidget> {
                       borderRadius: BorderRadius.circular(25.0),
                     ),
                   ),
-                ].divide(const SizedBox(height: 24.0)),
+                ].divide(SizedBox(height: 24.0)),
               ),
             ),
           ),

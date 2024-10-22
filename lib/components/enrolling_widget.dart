@@ -2,7 +2,9 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
 import 'enrolling_model.dart';
 export 'enrolling_model.dart';
 
@@ -46,26 +48,26 @@ class _EnrollingWidgetState extends State<EnrollingWidget> {
         color: FlutterFlowTheme.of(context).info,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: EdgeInsets.all(10.0),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding: EdgeInsets.all(10.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Flexible(
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(12.0, 40.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(12.0, 40.0, 0.0, 0.0),
                       child: Text(
                         'Get Your Session ?',
                         textAlign: TextAlign.start,
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Inter',
-                              color: const Color(0xFFE7222E),
+                              color: Color(0xFFE7222E),
                               fontSize: 24.0,
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.bold,
@@ -78,7 +80,7 @@ class _EnrollingWidgetState extends State<EnrollingWidget> {
               ),
             ),
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
               child: Lottie.asset(
                 'assets/jsons/Animation_-_1728643509297.json',
                 width: 200.0,
@@ -105,9 +107,9 @@ class _EnrollingWidgetState extends State<EnrollingWidget> {
                     width: 250.0,
                     height: 40.0,
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primary,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Inter',

@@ -1,16 +1,23 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 
+import '/backend/sqlite/sqlite_manager.dart';
 
 import '/auth/custom_auth/custom_auth_user_provider.dart';
 
 import '/index.dart';
+import '/main.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/lat_lng.dart';
+import '/flutter_flow/place.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import 'serialization_util.dart';
 
 export 'package:go_router/go_router.dart';
 export 'serialization_util.dart';
@@ -75,13 +82,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) =>
-          appStateNotifier.loggedIn ? const LoginWidget() : const AddcourseWidget(),
+          appStateNotifier.loggedIn ? LoginWidget() : AddcourseWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? const LoginWidget() : const AddcourseWidget(),
+              appStateNotifier.loggedIn ? LoginWidget() : AddcourseWidget(),
         ),
         FFRoute(
           name: 'ScorePage',
@@ -118,27 +125,27 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Login',
           path: '/login',
-          builder: (context, params) => const LoginWidget(),
+          builder: (context, params) => LoginWidget(),
         ),
         FFRoute(
           name: 'Register',
           path: '/register',
-          builder: (context, params) => const RegisterWidget(),
+          builder: (context, params) => RegisterWidget(),
         ),
         FFRoute(
           name: 'forgetPassword',
           path: '/forgetPassword',
-          builder: (context, params) => const ForgetPasswordWidget(),
+          builder: (context, params) => ForgetPasswordWidget(),
         ),
         FFRoute(
           name: 'homenew',
           path: '/homenew',
-          builder: (context, params) => const HomenewWidget(),
+          builder: (context, params) => HomenewWidget(),
         ),
         FFRoute(
           name: 'editProfile',
           path: '/editProfile',
-          builder: (context, params) => const EditProfileWidget(),
+          builder: (context, params) => EditProfileWidget(),
         ),
         FFRoute(
           name: 'course_Details',
@@ -165,12 +172,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'teacher_home',
           path: '/teacherHome',
-          builder: (context, params) => const TeacherHomeWidget(),
+          builder: (context, params) => TeacherHomeWidget(),
         ),
         FFRoute(
           name: 'addcourse',
           path: '/addcourse',
-          builder: (context, params) => const AddcourseWidget(),
+          builder: (context, params) => AddcourseWidget(),
         ),
         FFRoute(
           name: 'addTopics',
@@ -275,7 +282,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'usersList',
           path: '/usersList',
-          builder: (context, params) => const UsersListWidget(),
+          builder: (context, params) => UsersListWidget(),
         ),
         FFRoute(
           name: 'opentopic',
@@ -302,12 +309,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'teacherView',
           path: '/teacherView',
-          builder: (context, params) => const TeacherViewWidget(),
+          builder: (context, params) => TeacherViewWidget(),
         ),
         FFRoute(
           name: 'topicsOfUser',
           path: '/topicsOfUser',
-          builder: (context, params) => const TopicsOfUserWidget(),
+          builder: (context, params) => TopicsOfUserWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
       observers: [routeObserver],
@@ -548,7 +555,7 @@ class TransitionInfo {
   final Duration duration;
   final Alignment? alignment;
 
-  static TransitionInfo appDefault() => const TransitionInfo(hasTransition: false);
+  static TransitionInfo appDefault() => TransitionInfo(hasTransition: false);
 }
 
 class RootPageContext {

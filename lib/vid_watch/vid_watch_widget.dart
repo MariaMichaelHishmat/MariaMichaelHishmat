@@ -2,7 +2,10 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_video_player.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'vid_watch_model.dart';
 export 'vid_watch_model.dart';
 
@@ -55,7 +58,7 @@ class _VidWatchWidgetState extends State<VidWatchWidget> {
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -66,7 +69,7 @@ class _VidWatchWidgetState extends State<VidWatchWidget> {
           ),
           title: Text(
             valueOrDefault<String>(
-              widget.vidn,
+              widget!.vidn,
               'm',
             ),
             style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -76,23 +79,23 @@ class _VidWatchWidgetState extends State<VidWatchWidget> {
                   letterSpacing: 0.0,
                 ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: true,
           elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Padding(
                   padding:
-                      const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 450.0),
+                      EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 450.0),
                   child: FlutterFlowVideoPlayer(
-                    path: widget.vidpath!,
+                    path: widget!.vidpath!,
                     videoType: VideoType.network,
                     autoPlay: true,
                     looping: true,

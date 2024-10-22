@@ -1,6 +1,8 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'user_search_model.dart';
 export 'user_search_model.dart';
 
@@ -50,13 +52,13 @@ class _UserSearchWidgetState extends State<UserSearchWidget> {
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: EdgeInsets.all(12.0),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 12.0),
+              padding: EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 12.0, 12.0),
               child: Icon(
                 Icons.search,
                 color: FlutterFlowTheme.of(context).secondaryText,
@@ -88,7 +90,7 @@ class _UserSearchWidgetState extends State<UserSearchWidget> {
                 validator: _model.textControllerValidator.asValidator(context),
               ),
             ),
-          ].divide(const SizedBox(width: 12.0)),
+          ].divide(SizedBox(width: 12.0)),
         ),
       ),
     );

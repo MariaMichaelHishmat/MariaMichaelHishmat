@@ -3,6 +3,8 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'quesphoto_model.dart';
 export 'quesphoto_model.dart';
 
@@ -44,7 +46,7 @@ class _QuesphotoWidgetState extends State<QuesphotoWidget> {
       width: double.infinity,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).info,
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
             blurRadius: 4.0,
             color: Color(0x33000000),
@@ -58,7 +60,7 @@ class _QuesphotoWidgetState extends State<QuesphotoWidget> {
         borderRadius: BorderRadius.circular(12.0),
       ),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
+        padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 16.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -156,7 +158,7 @@ class _QuesphotoWidgetState extends State<QuesphotoWidget> {
                             letterSpacing: 0.0,
                           ),
                     ),
-                  ].divide(const SizedBox(height: 12.0)),
+                  ].divide(SizedBox(height: 12.0)),
                 ),
               ),
             ),
@@ -168,7 +170,7 @@ class _QuesphotoWidgetState extends State<QuesphotoWidget> {
                     letterSpacing: 0.0,
                   ),
             ),
-          ].divide(const SizedBox(height: 16.0)),
+          ].divide(SizedBox(height: 16.0)),
         ),
       ),
     );
